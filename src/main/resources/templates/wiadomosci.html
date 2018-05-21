@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+<h4>Wiadomosci</h4>
+
+<div>
+    <table th:cellpadding="10px" th:border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Wiadomosc</th>
+            <th>Wyswietlona</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="wiadomosc : ${wiadomosci}">
+            <td th:text="${wiadomosc.id}"></td>
+            <td th:text="${wiadomosc.wiadomosc}"></td>
+            <td th:text="${wiadomosc.wyswielone}"></td>
+
+
+        </tr>
+
+        <tr th:if="${wiadomosci.empty}">
+            <td colspan="6" align="center">Lista jest pusta</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
